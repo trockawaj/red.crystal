@@ -25,14 +25,21 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-4xl md:text-6xl font-serif font-light leading-tight mb-8">
-                            Architecture is not just about <span className="italic">building</span>.<br />
-                            It is about <span className="font-semibold">shaping void</span>.
+                        <h3 className="text-4xl md:text-5xl font-serif font-light leading-tight mb-8">
+                            赤色の鼓動<br />
+                            静寂なる美の深淵。
                         </h3>
-                        <p className="text-lg md:text-xl leading-relaxed text-gray-600 max-w-3xl">
-                            We approach web design with the mindset of an architect. We don't just arrange pixels; we construct digital spaces that breathe.
-                            By manipulating grid systems, negative space, and depth, we create immersive experiences that transcend the flat screen.
-                        </p>
+                        <div className="text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl space-y-6">
+                            <p>
+                                その中心で、唯一無二の輝きを放つ「赤色の巨星」。それは情熱であり、脈打つ生命の象徴です。
+                            </p>
+                            <p>
+                                AIが創造したモデルは、究極の美を持ちながらも、まだ「命」を知りません。そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります。
+                            </p>
+                            <p>
+                                無機質な存在に血が通い、鼓動が響き始める瞬間。人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「赤」の魔法。それは、美が生命へと昇華する奇跡です。
+                            </p>
+                        </div>
                     </motion.div>
 
                     <motion.div

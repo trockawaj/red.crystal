@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroImage from '../assets/Firefly001.png';
+import heroImage from '../assets/Firefly002.png';
 
 const Hero: React.FC = () => {
     return (
@@ -23,12 +23,12 @@ const Hero: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
-                            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-6">
-                                SPATIAL<br />
-                                LOGIC
+                            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-6 text-[#9e2a2b]">
+                                RED<br />
+                                CRYSTAL
                             </h1>
                             <p className="text-sm md:text-base tracking-widest uppercase opacity-70 border-l-2 border-current pl-4">
-                                Redefining Digital Architecture
+                                Red attraction
                             </p>
                         </motion.div>
                     </div>
