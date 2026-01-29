@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arch-black: #1a1a1a;
+  --color-arch-gray: #F5F5F5;
+  --color-arch-dark-gray: #333333;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-arch-gray);
+    color: var(--color-arch-black);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.arch-text-shadow {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
