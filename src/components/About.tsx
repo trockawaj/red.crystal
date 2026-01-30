@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -27,7 +28,7 @@ const About = () => {
                     >
                         <h3 className="text-4xl md:text-5xl font-serif font-light leading-tight mb-8">
                             赤色の鼓動<br />
-                            静寂なる美の深淵。
+                            静寂なる美の深淵
                         </h3>
                         <div className="text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl space-y-6">
                             <p>
@@ -35,7 +36,7 @@ const About = () => {
                                 そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります
                             </p>
                             <p>
-                                無機質な存在に血が通い、鼓動が響き始める瞬間。人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「<span className="text-[#9e2a2b]">赤</span>」の魔法。それは、美が生命へと昇華する奇跡です
+                                無機質な存在に血が通い、鼓動が響き始める瞬間。人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「<span className="text-[#9e2a2b]">赤</span>」の魔法。それは、美が生命へと昇華するための挑戦の色です
                             </p>
                         </div>
                     </motion.div>
@@ -55,6 +56,28 @@ const About = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* New Centered Section */}
+            <motion.div
+                className="max-w-4xl mx-auto mt-32 text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+            >
+                <div className="mb-8">
+                    <p className="text-xl md:text-2xl font-serif font-light leading-loose tracking-wide text-gray-800">
+                        RED CRYSTALは、デジタルとリアルの境界を溶かす
+                    </p>
+                </div>
+
+                <Link
+                    to="/about"
+                    className="inline-block border border-black text-black bg-transparent px-12 py-4 uppercase tracking-widest text-sm transition-colors duration-300 hover:bg-[#9e2a2b] hover:border-[#9e2a2b] hover:text-white"
+                >
+                    about us
+                </Link>
+            </motion.div>
         </section>
     );
 };

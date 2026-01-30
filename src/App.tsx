@@ -1,16 +1,15 @@
-import Hero from './components/Hero';
-import About from './components/About';
-import Works from './components/Works';
-import Contact from './components/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
-    <main className="min-h-screen bg-arch-gray font-sans text-arch-black overflow-x-hidden selection:bg-arch-black selection:text-white">
-      <Hero />
-      <About />
-      <Works />
-      <Contact />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </Router>
   );
 }
 

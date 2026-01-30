@@ -46,8 +46,6 @@ const Hero: React.FC = () => {
                                 alt="Architectural Visualization"
                                 className="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
                             />
-                            {/* Overlay Line */}
-                            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white opacity-20 mix-blend-overlay"></div>
                         </motion.div>
 
                         {/* Floating Element for Depth */}
@@ -58,7 +56,7 @@ const Hero: React.FC = () => {
                             transition={{ delay: 0.8, duration: 0.8 }}
                         >
                             <div className="text-xs font-mono">
-                                Coordinates<br />35.6895° N<br />139.6917° E
+                                Coordinates<br />34.3003° N<br />134.6662° E
                             </div>
                             <div className="text-4xl font-serif self-end">01</div>
                         </motion.div>
