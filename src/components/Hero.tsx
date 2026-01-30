@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 <div className="grid grid-cols-12 w-full h-full">
 
                     {/* Text Content - Left/Top */}
-                    <div className="col-span-12 md:col-span-4 flex flex-col justify-center relative z-20 mix-blend-difference text-white md:text-black md:mix-blend-normal">
+                    <div className="col-span-12 md:col-span-4 flex flex-col justify-center relative z-20 text-black md:text-black">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
                                 RED<br />
                                 CRYSTAL
                             </h1>
-                            <p className="text-sm md:text-base tracking-widest uppercase opacity-70 border-l-2 border-current pl-4">
+                            <p className="text-sm md:text-base tracking-widest uppercase opacity-70 border-l-2 border-current pl-4 text-black">
                                 Red attraction
                             </p>
                         </motion.div>
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                     {/* Image Content - Right/Center - Spanning more cols */}
                     <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="absolute inset-0 md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl"
+                            className="relative h-[50vh] w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-8 md:mt-0"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
