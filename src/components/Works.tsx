@@ -30,7 +30,7 @@ const Works = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-5xl font-bold tracking-tight">SELECTED WORKS</h2>
+                    <h2 className="text-5xl font-bold tracking-tight text-[#9e2a2b]">SELECTED WORKS</h2>
                     <span className="font-mono text-sm">(02)</span>
                 </motion.div>
 
@@ -44,7 +44,7 @@ const Works = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
                         >
-                            <div className="overflow-hidden mb-4 relative aspect-[4/3] md:aspect-auto h-[60vh]">
+                            <div className="overflow-hidden mb-4 relative aspect-[4/3] md:aspect-auto h-[60vh] max-w-full">
                                 <img
                                     src={project.image}
                                     alt={project.title}

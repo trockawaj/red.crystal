@@ -7,7 +7,7 @@ const About = () => {
                 {/* Title Column */}
                 <div className="col-span-12 md:col-span-3">
                     <motion.h2
-                        className="text-xl font-bold tracking-widest uppercase border-b-2 border-arch-black pb-4 mb-10 inline-block"
+                        className="text-xl font-bold tracking-widest uppercase border-b-2 border-arch-black pb-4 mb-10 inline-block text-[#9e2a2b]"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}

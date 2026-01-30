@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                     {/* Image Content - Right/Center - Spanning more cols */}
                     <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="absolute inset-4 md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl"
+                            className="absolute inset-0 md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
                             <img
                                 src={heroImage}
                                 alt="Architectural Visualization"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                                className="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
                             />
                             {/* Overlay Line */}
                             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white opacity-20 mix-blend-overlay"></div>
