@@ -23,10 +23,12 @@ import loc14 from '../location/location0014.png';
 import loc15 from '../location/location0015.png';
 import loc16 from '../location/location0016.png';
 import loc17 from '../location/location0017.png';
+import loc18 from '../location/location0018.png';
+import animeImg02 from '../anime/anime02.png';
 
 const images = [
     loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8, loc9,
-    loc10, loc11, loc12, loc13, loc14, loc15, loc16, loc17
+    loc10, loc11, loc12, loc13, loc14, loc15, loc16, loc17, loc18
 ];
 
 const LocationPage: React.FC = () => {
@@ -90,6 +92,7 @@ const LocationPage: React.FC = () => {
                 titleLine2Color="text-gray-600"
                 backgroundColor="bg-[#9e2a2b]/20 backdrop-blur-sm"
                 linkColor="text-black"
+                animeImage={animeImg02}
             />
 
             {/* Lightbox / Modal */}

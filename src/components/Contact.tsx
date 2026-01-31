@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import animeImg from '../anime/anime01.png';
+import defaultAnimeImg from '../anime/anime01.png';
 
 interface FooterLinkProps {
     href: string;
     label: string;
+    animeImage?: string;
 }
 
-const FooterLink: React.FC<FooterLinkProps> = ({ href, label }) => {
+const FooterLink: React.FC<FooterLinkProps> = ({ href, label, animeImage = defaultAnimeImg }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -35,7 +36,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, label }) => {
                         exit={{ opacity: 0, scale: 0.8 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                        <img src={animeImg} alt="pop" className="w-24 h-auto object-contain" />
+                        <img src={animeImage} alt="pop" className="w-24 h-auto object-contain" />
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -51,6 +52,7 @@ interface ContactProps {
     subtitle?: React.ReactNode;
     backgroundColor?: string;
     linkColor?: string;
+    animeImage?: string;
 }
 
 const Contact: React.FC<ContactProps> = ({
@@ -65,7 +67,8 @@ const Contact: React.FC<ContactProps> = ({
         </>
     ),
     backgroundColor = "bg-white",
-    linkColor = "text-arch-black" // Default to inherit or specific color if needed, actually text-arch-black is base text color, links borrow from it usually but here we want explicit control
+    linkColor = "text-arch-black", // Default to inherit or specific color if needed, actually text-arch-black is base text color, links borrow from it usually but here we want explicit control
+    animeImage
 }) => {
     return (
         <section className={`${backgroundColor} text-arch-black py-32 px-6`}>
@@ -92,9 +95,9 @@ const Contact: React.FC<ContactProps> = ({
                     transition={{ delay: 0.2 }}
                 >
                     <div className={`flex flex-col gap-8 text-xl font-light ${linkColor}`}>
-                        <FooterLink href="mailto:hello@studio.com" label="hello@studio.com" />
-                        <FooterLink href="#" label="Instagram" />
-                        <FooterLink href="#" label="LinkedIn" />
+                        <FooterLink href="mailto:hello@studio.com" label="hello@studio.com" animeImage={animeImage} />
+                        <FooterLink href="#" label="Instagram" animeImage={animeImage} />
+                        <FooterLink href="#" label="LinkedIn" animeImage={animeImage} />
                     </div>
                     <p className="mt-12 text-xs font-mono text-gray-600">
                         © 2026 RED CRYSTAL. ALL RIGHTS RESERVED.

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import aboutImage from '../assets/Firefly003.png';
 import Contact from '../components/Contact';
 import aboutBg from '../assets/about_bg_grid.png';
+import animeImg02 from '../anime/anime02.png';
 
 const AboutPage: React.FC = () => {
     return (
@@ -80,6 +81,7 @@ const AboutPage: React.FC = () => {
                 titleLine2Color="text-gray-600"
                 backgroundColor="bg-[#9e2a2b]/20 backdrop-blur-sm"
                 linkColor="text-black"
+                animeImage={animeImg02}
             />
         </div>
     );
