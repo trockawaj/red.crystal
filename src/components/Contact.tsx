@@ -1,4 +1,47 @@
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import animeImg from '../anime/anime01.png';
+
+interface FooterLinkProps {
+    href: string;
+    label: string;
+}
+
+const FooterLink: React.FC<FooterLinkProps> = ({ href, label }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <a
+            href={href}
+            className="group relative pb-4 w-full block"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Text */}
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                {label}
+            </span>
+
+            {/* Underline */}
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gray-700 transition-colors duration-300 group-hover:bg-[#9e2a2b]"></div>
+
+            {/* Anime Image Pop-up */}
+            <AnimatePresence>
+                {isHovered && (
+                    <motion.div
+                        className="absolute bottom-[1px] right-0 pointer-events-none z-20"
+                        initial={{ opacity: 0, y: 10, scale: 0.8, originY: 1 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                        <img src={animeImg} alt="pop" className="w-24 h-auto object-contain" />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </a>
+    );
+};
 
 interface ContactProps {
     titleLine1?: string;
@@ -48,10 +91,10 @@ const Contact: React.FC<ContactProps> = ({
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
                 >
-                    <div className={`grid grid-cols-1 gap-8 text-xl font-light ${linkColor}`}>
-                        <a href="mailto:hello@studio.com" className="border-b border-gray-700 pb-4 hover:opacity-70 hover:border-white transition-all">hello@studio.com</a>
-                        <a href="#" className="border-b border-gray-700 pb-4 hover:opacity-70 hover:border-white transition-all">Instagram</a>
-                        <a href="#" className="border-b border-gray-700 pb-4 hover:opacity-70 hover:border-white transition-all">LinkedIn</a>
+                    <div className={`flex flex-col gap-8 text-xl font-light ${linkColor}`}>
+                        <FooterLink href="mailto:hello@studio.com" label="hello@studio.com" />
+                        <FooterLink href="#" label="Instagram" />
+                        <FooterLink href="#" label="LinkedIn" />
                     </div>
                     <p className="mt-12 text-xs font-mono text-gray-600">
                         © 2026 RED CRYSTAL. ALL RIGHTS RESERVED.

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
-        <section className="min-h-screen bg-arch-gray py-20 px-6 overflow-hidden">
+        <section className="min-h-screen bg-arch-gray pt-20 pb-0 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 h-full">
                 {/* Title Column */}
                 <div className="col-span-12 md:col-span-3">
@@ -59,7 +59,7 @@ const About = () => {
 
             {/* New Centered Section */}
             <motion.div
-                className="max-w-4xl mx-auto mt-32 text-center"
+                className="max-w-4xl mx-auto mt-8 mb-4 text-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
