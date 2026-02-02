@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import defaultAnimeImg from '../anime/anime01.png';
 
 interface FooterLinkProps {
@@ -26,11 +26,11 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, label, animeImage = defau
             {/* Underline */}
             <div className="absolute bottom-0 left-0 w-full h-px bg-gray-700 transition-colors duration-300 group-hover:bg-[#9e2a2b]"></div>
 
-            {/* Anime Image Pop-up */}
+            {/* Anime Image Pop-up (Desktop Hover) */}
             <AnimatePresence>
                 {isHovered && (
                     <motion.div
-                        className="absolute bottom-[1px] right-0 pointer-events-none z-20"
+                        className="hidden md:block absolute bottom-[1px] right-0 pointer-events-none z-20"
                         initial={{ opacity: 0, y: 10, scale: 0.8, originY: 1 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
@@ -58,8 +58,8 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({
     titleLine1 = "START",
     titleLine2 = "PROJECT",
-    titleLine1Color = "text-arch-black", // Default black/current
-    titleLine2Color = "text-gray-600", // Default gray
+    titleLine1Color = "text-arch-black",
+    titleLine2Color = "text-gray-600",
     subtitle = (
         <>
             We are currently accepting new projects for 2026.<br />
@@ -67,12 +67,29 @@ const Contact: React.FC<ContactProps> = ({
         </>
     ),
     backgroundColor = "bg-white",
-    linkColor = "text-arch-black", // Default to inherit or specific color if needed, actually text-arch-black is base text color, links borrow from it usually but here we want explicit control
-    animeImage
+    linkColor = "text-arch-black",
+    animeImage = defaultAnimeImg // Default to 01 if not provided
 }) => {
+    const containerRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
     return (
-        <section className={`${backgroundColor} text-arch-black py-32 px-6`}>
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <section ref={containerRef} className={`${backgroundColor} text-arch-black py-32 px-6 relative overflow-hidden`}>
+            {/* Scroll Anime (Mobile Only) - Positioned decoratively */}
+            <motion.div
+                style={{ y, opacity }}
+                className="absolute right-4 bottom-32 md:hidden z-0 pointer-events-none opacity-20"
+            >
+                <img src={animeImage} alt="Decor" className="w-32 h-auto object-contain opacity-80" />
+            </motion.div>
+
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}

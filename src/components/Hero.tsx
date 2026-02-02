@@ -44,13 +44,13 @@ const Hero: React.FC = () => {
                             <img
                                 src={heroImage}
                                 alt="Architectural Visualization"
-                                className="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
+                                className="w-full h-full object-cover object-top grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
                             />
                         </motion.div>
 
                         {/* Floating Element for Depth */}
                         <motion.div
-                            className="absolute bottom-20 right-0 md:-right-10 w-48 h-64 bg-arch-black text-arch-gray p-6 hidden md:flex flex-col justify-between shadow-xl"
+                            className="absolute bottom-8 right-4 md:bottom-20 md:-right-10 w-48 h-56 md:h-64 bg-arch-black text-arch-gray p-6 flex flex-col justify-between shadow-xl"
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.8, duration: 0.8 }}
