@@ -76,17 +76,17 @@ const Contact: React.FC<ContactProps> = ({
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+    const y = useTransform(scrollYProgress, [0.8, 1], [100, 0]);
+    const opacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
 
     return (
         <section ref={containerRef} className={`${backgroundColor} text-arch-black py-32 px-6 relative overflow-hidden`}>
             {/* Scroll Anime (Mobile Only) - Positioned decoratively */}
             <motion.div
                 style={{ y, opacity }}
-                className="absolute right-4 bottom-32 md:hidden z-0 pointer-events-none opacity-20"
+                className="absolute right-0 bottom-0 md:hidden z-0 pointer-events-none"
             >
-                <img src={animeImage} alt="Decor" className="w-32 h-auto object-contain opacity-80" />
+                <img src={animeImage} alt="Decor" className="w-32 h-auto object-contain opacity-100" />
             </motion.div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">

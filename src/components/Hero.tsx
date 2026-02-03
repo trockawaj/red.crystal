@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                     {/* Image Content - Right/Center - Spanning more cols */}
                     <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="relative h-[50vh] w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-8 md:mt-0"
+                            className="relative h-[50vh] w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
@@ -50,15 +50,15 @@ const Hero: React.FC = () => {
 
                         {/* Floating Element for Depth */}
                         <motion.div
-                            className="absolute bottom-8 right-4 md:bottom-20 md:-right-10 w-48 h-56 md:h-64 bg-arch-black text-arch-gray p-6 flex flex-col justify-between shadow-xl"
+                            className="absolute bottom-8 right-4 md:bottom-20 md:-right-10 w-32 h-40 md:w-48 md:h-64 bg-arch-black text-arch-gray p-4 md:p-6 flex flex-col justify-between shadow-xl"
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.8, duration: 0.8 }}
                         >
-                            <div className="text-xs font-mono">
+                            <div className="text-[10px] md:text-xs font-mono">
                                 Coordinates<br />34.3003° N<br />134.6662° E
                             </div>
-                            <div className="text-4xl font-serif self-end">01</div>
+                            <div className="text-2xl md:text-4xl font-serif self-end">01</div>
                         </motion.div>
                     </div>
                 </div>
