@@ -37,8 +37,8 @@ const Location: React.FC = () => {
                 <div className="flex flex-col items-center mb-12">
                     {/* Disclaimer Text */}
                     <div className="mb-8 w-full overflow-x-auto text-center">
-                        <p className="text-xs md:text-sm text-gray-600 font-sans whitespace-nowrap inline-block text-center">
-                            当社のAIモデルは、権利関係がクリアな画像生成AIのシステムを使用しているため、安心して広告等にご利用いただけます
+                        <p className="text-xs md:text-sm text-gray-600 font-sans whitespace-nowrap md:whitespace-normal inline-block text-center">
+                            当社のAIモデルは、権利関係がクリアな画像生成AIの<br className="block md:hidden landscape:hidden" />システムを使用しているため、<br className="block md:hidden landscape:hidden" />安心して広告等にご利用いただけます
                         </p>
                         <div className="mt-4 text-xs md:text-sm text-gray-500 font-sans leading-relaxed">
                             <p>ロケーションは参考の為に表示しています</p>

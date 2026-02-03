@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                     {/* Image Content - Right/Center - Spanning more cols */}
                     <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="relative h-[50vh] w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
+                            className="relative h-[50vh] landscape:h-screen w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}

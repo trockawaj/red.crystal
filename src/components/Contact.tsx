@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import defaultAnimeImg from '../anime/anime01.png';
 
@@ -70,17 +70,16 @@ const Contact: React.FC<ContactProps> = ({
     linkColor = "text-arch-black",
     animeImage = defaultAnimeImg // Default to 01 if not provided
 }) => {
-    const containerRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
+        offset: ["0.8 1", "1 1"]
     });
 
-    const y = useTransform(scrollYProgress, [0.8, 1], [100, 0]);
-    const opacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
+    // Animate from 100px down to 0px up (slide up), opacity 0 to 1
+    const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
-        <section ref={containerRef} className={`${backgroundColor} text-arch-black py-32 px-6 relative overflow-hidden`}>
+        <section className={`${backgroundColor} text-arch-black py-32 px-6 relative overflow-hidden`}>
             {/* Scroll Anime (Mobile Only) - Positioned decoratively */}
             <motion.div
                 style={{ y, opacity }}
