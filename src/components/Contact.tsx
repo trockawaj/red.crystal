@@ -112,7 +112,7 @@ const Contact: React.FC<ContactProps> = ({
                 >
                     <div className={`flex flex-col gap-8 text-xl font-light ${linkColor}`}>
                         <FooterLink href="mailto:hello@studio.com" label="hello@studio.com" animeImage={animeImage} />
-                        <FooterLink href="#" label="Instagram" animeImage={animeImage} />
+                        <FooterLink href="https://www.instagram.com/red_crystal_models/" label="Instagram" animeImage={animeImage} />
                         <FooterLink href="#" label="LinkedIn" animeImage={animeImage} />
                     </div>
                     <p className="mt-12 text-xs font-mono text-gray-600">

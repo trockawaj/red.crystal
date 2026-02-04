@@ -67,7 +67,7 @@ const About = () => {
             >
                 <div className="mb-8">
                     <p className="text-xl md:text-2xl font-serif font-light leading-loose tracking-wide text-gray-800">
-                        RED CRYSTALは、<br className="block md:hidden landscape:hidden" />デジタルとリアルの境界を溶かす
+                        RED CRYSTALは<br className="block md:hidden landscape:hidden" />デジタルとリアルの境界を溶かす
                     </p>
                 </div>
 
