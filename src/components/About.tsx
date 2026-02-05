@@ -26,18 +26,42 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-4xl md:text-5xl font-serif font-light leading-tight mb-8">
-                            赤色の鼓動<br />
-                            静寂なる美の深淵
-                        </h3>
-                        <div className="text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl space-y-6">
-                            <p>
-                                AIが創造したモデルは、究極の美を持ちながらも、まだ「命」を知りません<br />
-                                そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります
-                            </p>
-                            <p>
-                                無機質な存在に血が通い、鼓動が響き始める瞬間。人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「<span className="text-[#9e2a2b]">赤</span>」の魔法。それは、美が生命へと昇華するための挑戦の色です
-                            </p>
+                        {/* Mobile Portrait Only Text */}
+                        <div className="block md:hidden landscape:hidden">
+                            <h3 className="text-4xl font-serif font-light leading-tight mb-8">
+                                赤色の鼓動<br />
+                                静寂なる美の深淵
+                            </h3>
+                            <div className="text-base leading-relaxed text-gray-600 space-y-6">
+                                <p>
+                                    AIが創造したモデルは<br />
+                                    究極の美を持ちながらも、まだ「命」を知りません<br />
+                                    そこに、貴社のプロダクト<br />
+                                    「ファッション、コスメ、あるいは躍動するスポーツの輝き」を纏わせることで、初めて物語が始まります
+                                </p>
+                                <p>
+                                    無機質な存在に血が通い、鼓動が響き始める瞬間。<br />
+                                    人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「<span className="text-[#9e2a2b]">赤</span>」の魔法。<br />
+                                    それは、美が生命へと昇華するための挑戦の色です
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Desktop / Landscape Text (Original) */}
+                        <div className="hidden md:block landscape:block">
+                            <h3 className="text-4xl md:text-5xl font-serif font-light leading-tight mb-8">
+                                赤色の鼓動<br />
+                                静寂なる美の深淵
+                            </h3>
+                            <div className="text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl space-y-6">
+                                <p>
+                                    AIが創造したモデルは、究極の美を持ちながらも、まだ「命」を知りません<br />
+                                    そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります
+                                </p>
+                                <p>
+                                    無機質な存在に血が通い、鼓動が響き始める瞬間。人の五感は、その美しさの中に確かな熱と価値を見出します。命なきものに魂を吹き込み、世界を鮮やかに染め上げる「<span className="text-[#9e2a2b]">赤</span>」の魔法。それは、美が生命へと昇華するための挑戦の色です
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
 
