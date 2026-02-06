@@ -34,7 +34,7 @@ const About = () => {
                             </h3>
                             <div className="text-base leading-relaxed text-gray-600 space-y-6">
                                 <p>
-                                    AIが創造したモデルは、究極の美を持ちながらもまだ「命」を知りません<br />
+                                    AIが創造したモデルは、究極の美を持ちながらもまだ「<span className="text-[#9e2a2b]">命</span>」を知りません<br />
                                     そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります
                                 </p>
                                 <p>
@@ -52,7 +52,7 @@ const About = () => {
                             </h3>
                             <div className="text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl space-y-6">
                                 <p>
-                                    AIが創造したモデルは、究極の美を持ちながらも、まだ「命」を知りません<br />
+                                    AIが創造したモデルは、究極の美を持ちながらも、まだ「<span className="text-[#9e2a2b]">命</span>」を知りません<br />
                                     そこに、貴社のプロダクト――ファッション、コスメ、あるいは躍動するスポーツの輝き――を纏わせることで、初めて物語が始まります
                                 </p>
                                 <p>
