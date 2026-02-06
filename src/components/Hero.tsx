@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 <div className="grid grid-cols-12 w-full h-full">
 
                     {/* Text Content - Left/Top */}
-                    <div className="col-span-12 md:col-span-4 flex flex-col justify-center relative z-20 text-black md:text-black">
+                    <div className="col-span-12 landscape:col-span-5 md:col-span-4 flex flex-col justify-center relative z-20 text-black md:text-black">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -34,9 +34,9 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Image Content - Right/Center - Spanning more cols */}
-                    <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
+                    <div className="col-span-12 landscape:col-span-7 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="relative h-[50vh] landscape:h-screen w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
+                            className="relative h-[50vh] landscape:h-full w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
