@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import heroImage from '../assets/Firefly004.png';
+import mobileHeroImage from '../assets/Firefly004_mobile.png';
 
 const Hero: React.FC = () => {
     return (
@@ -41,10 +42,17 @@ const Hero: React.FC = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                         >
+                            {/* Mobile Image (Landscape: Contain) */}
+                            <img
+                                src={mobileHeroImage}
+                                alt="Architectural Visualization (Mobile)"
+                                className="block md:hidden w-full h-full landscape:h-full object-cover landscape:object-contain object-top grayscale-0 transition-all duration-700 ease-in-out"
+                            />
+                            {/* PC Image (Cover) */}
                             <img
                                 src={heroImage}
-                                alt="Architectural Visualization"
-                                className="w-full h-full landscape:h-full md:h-full landscape:object-contain md:object-cover object-top grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
+                                alt="Architectural Visualization (PC)"
+                                className="hidden md:block w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
                             />
                         </motion.div>
 
