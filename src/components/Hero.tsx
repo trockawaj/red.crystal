@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import heroImage from '../assets/Firefly004.png';
-import mobileHeroImage from '../assets/Firefly004_mobile.png';
+import mobileHeroImage from '../assets/Firefly002.png';
 
 const Hero: React.FC = () => {
     return (
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
                 <div className="grid grid-cols-12 w-full h-full">
 
                     {/* Text Content - Left/Top */}
-                    <div className="col-span-12 landscape:col-span-5 md:col-span-4 flex flex-col justify-center relative z-20 text-black md:text-black">
+                    <div className="col-span-12 md:col-span-4 flex flex-col justify-center relative z-20 text-black md:text-black">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -35,24 +35,24 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Image Content - Right/Center - Spanning more cols */}
-                    <div className="col-span-12 landscape:col-span-7 md:col-start-5 md:col-span-8 h-full relative">
+                    <div className="col-span-12 md:col-start-5 md:col-span-8 h-full relative">
                         <motion.div
-                            className="relative h-[50vh] landscape:h-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
+                            className="relative h-[50vh] landscape:h-screen w-full md:h-auto md:absolute md:inset-y-12 md:left-0 md:right-12 overflow-hidden shadow-2xl mt-0 md:mt-0"
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                         >
-                            {/* Mobile Image (Landscape: Contain) */}
+                            {/* Mobile Image (Firefly002) - Portrait/Landscape Contain */}
                             <img
                                 src={mobileHeroImage}
                                 alt="Architectural Visualization (Mobile)"
                                 className="block md:hidden w-full h-full landscape:h-full object-cover landscape:object-contain object-top grayscale-0 transition-all duration-700 ease-in-out"
                             />
-                            {/* PC Image (Cover) */}
+                            {/* Desktop Image (Firefly004) */}
                             <img
                                 src={heroImage}
-                                alt="Architectural Visualization (PC)"
-                                className="hidden md:block w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                                alt="Architectural Visualization (Desktop)"
+                                className="hidden md:block w-full h-full object-cover object-top grayscale md:hover:grayscale-0 transition-all duration-700 ease-in-out"
                             />
                         </motion.div>
 
