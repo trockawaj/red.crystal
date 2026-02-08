@@ -29,7 +29,6 @@ const Works = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-[#9e2a2b]">SELECTED WORKS</h2>
-                    <span className="font-mono text-sm md:text-base text-black">(02)</span>
                 </motion.div>
 
                 {/* Optional: Descriptive text or just letting the video speak */}
