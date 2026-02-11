@@ -1,8 +1,23 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import videoSrc from '../video/video02.mp4';
 import posterImg from '../assets/architectural_abstract_1.png';
 
 const Works = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        // Check initially
+        checkMobile();
+
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <section className="relative h-screen w-full overflow-hidden bg-white">
             {/* Video Background */}
@@ -13,7 +28,7 @@ const Works = () => {
                 loop
                 muted
                 playsInline
-                poster={posterImg}
+                poster={isMobile ? undefined : posterImg}
                 preload="auto"
             />
 
