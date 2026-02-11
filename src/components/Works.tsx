@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import videoSrc from '../video/video01.mp4';
+import videoSrc from '../video/video02.mp4';
 import posterImg from '../assets/architectural_abstract_1.png';
 
 const Works = () => {
