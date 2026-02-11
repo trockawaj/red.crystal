@@ -76,6 +76,10 @@ const Location: React.FC = () => {
                     >
                         ALL
                     </Link>
+                    {/* Mobile Landscape Recommendation */}
+                    <p className="block md:hidden text-[10px] text-gray-500 mt-6 font-sans tracking-widest">
+                        スマホの横向け推奨
+                    </p>
                 </div>
             </div>
 
