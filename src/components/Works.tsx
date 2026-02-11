@@ -23,13 +23,6 @@ const Works = () => {
             {/* Content Container */}
             <div className="relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-center px-6">
 
-                {/* Mobile Landscape Recommendation - Positioned at top for visibility below "ALL" */}
-                <div className="absolute top-4 left-0 w-full text-center block md:hidden z-20">
-                    <p className="text-[10px] text-gray-500 font-sans tracking-widest bg-white/50 inline-block px-2 py-1 rounded-full backdrop-blur-sm">
-                        スマホの横向け推奨
-                    </p>
-                </div>
-
                 <motion.div
                     className="flex justify-between items-end border-b border-arch-black/30 pb-8"
                     initial={{ opacity: 0, y: 20 }}
