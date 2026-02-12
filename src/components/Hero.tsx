@@ -42,9 +42,9 @@ const Hero: React.FC = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                         >
-                            {/* Mobile Image (Firefly002) - Portrait/Landscape Contain */}
+                            {/* Mobile Image (Firefly004) - Portrait/Landscape Contain */}
                             <img
-                                src={mobileHeroImage}
+                                src={heroImage}
                                 alt="Architectural Visualization (Mobile)"
                                 className="block md:hidden w-full h-full landscape:h-full object-cover landscape:object-contain object-top grayscale-0 transition-all duration-700 ease-in-out"
                             />
