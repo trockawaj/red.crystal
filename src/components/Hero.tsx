@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import heroImage from '../assets/Firefly004.png';
-import mobileHeroImage from '../assets/Firefly002.png';
 
 const Hero: React.FC = () => {
     return (
