@@ -16,10 +16,13 @@ import img015 from '../assets/firefly015.png';
 import img016 from '../assets/firefly016.png';
 import img017 from '../assets/firefly017.png';
 import img018 from '../assets/firefly018.png';
+import img019 from '../assets/firefly019.png';
+import img020 from '../assets/firefly020.png';
+import img021 from '../assets/firefly021.png';
 
 const modelImages = [
     img005, img006, img007, img008, img009,
-    img015, img016, img017, img018
+    img015, img016, img017, img018, img019, img020, img021
 ];
 
 const Home: React.FC = () => {
