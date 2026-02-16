@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 
             {/* Menu Section */}
             {/* Menu Section */}
-            <section className="w-full flex justify-center items-center bg-white -mt-40 md:-mt-96 mb-24 md:mb-48 relative z-10">
+            <section className="w-full flex justify-center items-center bg-white -mt-12 md:-mt-96 mb-32 md:mb-48 relative z-10">
                 <div className="relative w-[90%] md:w-full max-w-6xl h-[400px] md:h-[700px] flex justify-center items-center">
                     <img src={heartImg} alt="Menu Heart" className="w-full h-full object-contain" />
                     <Link to="/menu" className="absolute z-10">
