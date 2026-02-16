@@ -20,6 +20,8 @@ import img019 from '../assets/firefly019.png';
 import img020 from '../assets/firefly020.png';
 import img021 from '../assets/firefly021.png';
 
+import heartImg from '../assets/menu/heart.png'; // Added heartImg import
+
 const modelImages = [
     img005, img006, img007, img008, img009,
     img015, img016, img017, img018, img019, img020, img021
@@ -30,6 +32,19 @@ const Home: React.FC = () => {
         <>
             <Hero />
             <About />
+
+            {/* Menu Section */}
+            <section className="py-12 md:py-24 w-full flex justify-center items-center bg-white">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 flex justify-center items-center">
+                    <img src={heartImg} alt="Menu Heart" className="w-full h-full object-contain" />
+                    <Link to="/menu" className="absolute z-10">
+                        <div className="bg-black text-white px-8 py-3 md:px-10 md:py-4 text-lg md:text-xl tracking-widest transition-colors duration-300 hover:bg-[#9e2a2b]">
+                            MENU
+                        </div>
+                    </Link>
+                </div>
+            </section>
+
             <Gallery
                 title="MODELS"
                 images={modelImages}
