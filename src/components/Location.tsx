@@ -24,10 +24,12 @@ import loc17 from '../location/location0017.png';
 import loc18 from '../location/location0018.png';
 import loc19 from '../location/location0019.png';
 import loc20 from '../location/location0020.png';
+import loc21 from '../location/location0021.png';
+import loc22 from '../location/location0022.png';
 
 const images = [
     loc1, loc2, loc3, loc4, loc5, loc6, loc7, loc8, loc9,
-    loc10, loc11, loc12, loc13, loc14, loc15, loc16, loc17, loc18, loc19, loc20
+    loc10, loc11, loc12, loc13, loc14, loc15, loc16, loc17, loc18, loc19, loc20, loc21, loc22
 ];
 
 const Location: React.FC = () => {
