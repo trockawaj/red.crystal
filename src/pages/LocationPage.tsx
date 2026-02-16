@@ -26,8 +26,8 @@ import loc17 from '../location/location0017.png';
 import loc18 from '../location/location0018.png';
 import loc19 from '../location/location0019.png';
 import loc20 from '../location/location0020.png';
-import loc21 from '../location/location0021.png';
-import loc22 from '../location/location0022.png';
+import loc21 from '../location/location021.png';
+import loc22 from '../location/location022.png';
 import animeImg02 from '../anime/anime02.png';
 
 const images = [
