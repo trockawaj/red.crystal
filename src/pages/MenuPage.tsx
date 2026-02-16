@@ -55,6 +55,9 @@ const MenuPage: React.FC = () => {
                             <p className="text-sm md:text-base text-gray-700">ー商品の合成&ラフイメージ3枚ー</p>
                         </motion.div>
 
+                        {/* Spacer between Categories */}
+                        <div className="h-16 md:h-24"></div>
+
                         {/* Motion Video 5000 */}
                         <motion.div
                             className="text-center space-y-2"

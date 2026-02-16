@@ -35,8 +35,9 @@ const Home: React.FC = () => {
             <About />
 
             {/* Menu Section */}
-            <section className="py-12 md:py-24 w-full flex justify-center items-center bg-white">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 flex justify-center items-center">
+            {/* Menu Section */}
+            <section className="w-full flex justify-center items-center bg-white -mt-10 md:-mt-20 mb-12 relative z-10">
+                <div className="relative w-80 h-80 md:w-[500px] md:h-[500px] flex justify-center items-center">
                     <img src={heartImg} alt="Menu Heart" className="w-full h-full object-contain" />
                     <Link to="/menu" className="absolute z-10">
                         <div className="bg-black text-white px-8 py-3 md:px-10 md:py-4 text-lg md:text-xl tracking-widest transition-colors duration-300 hover:bg-[#9e2a2b]">
