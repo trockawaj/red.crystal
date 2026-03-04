@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface GalleryProps {
@@ -11,71 +11,41 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ title, images, description, className = "pb-20 pt-10" }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [scrollProgress, setScrollProgress] = useState(0);
 
-    // Infinite Loop Logic: Clone items for seamless scroll
-    const displayImages = [...images, ...images, ...images];
-
-    // Auto-scroll logic
-    useEffect(() => {
-        const interval = setInterval(() => {
-            handleScroll('right');
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-
-    // Initial Scroll Position (Center Set)
-    useEffect(() => {
+    const handleScrollEvent = () => {
         if (scrollContainerRef.current) {
-            const { current } = scrollContainerRef;
-            // Scroll to the start of the middle set
-            const singleSetWidth = current.scrollWidth / 3;
-            current.scrollLeft = singleSetWidth;
-        }
-    }, [images]);
-
-    const handleScroll = (direction: 'left' | 'right') => {
-        if (scrollContainerRef.current) {
-            const { current } = scrollContainerRef;
-            const firstChild = current.firstElementChild as HTMLElement;
-            if (!firstChild) return;
-
-            // Calculate scroll amount (one item + gap)
-            const itemWidth = firstChild.offsetWidth;
-            const gap = 16;
-            const scrollAmount = itemWidth + gap;
-
-            if (direction === 'left') {
-                current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                // Infinite interactions handled in onScroll
-            } else {
-                current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            const maxScroll = scrollWidth - clientWidth;
+            setScrollProgress(maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0);
         }
     };
 
-    // Scroll Reset Logic for Infinite Loop
-    const handleScrollEvent = () => {
-        if (scrollContainerRef.current) {
-            const { current } = scrollContainerRef;
-            const singleSetWidth = current.scrollWidth / 3;
+    const handlePointerDown = (e: React.PointerEvent) => {
+        if (!trackRef.current || !scrollContainerRef.current) return;
+        const trackRect = trackRef.current.getBoundingClientRect();
 
-            // If scrolled into the third set (Clone Start), jump back to Middle (Originals)
-            if (current.scrollLeft >= singleSetWidth * 2) {
-                current.style.scrollBehavior = 'auto'; // Instant jump
-                current.scrollLeft -= singleSetWidth;
-                current.style.scrollBehavior = 'smooth'; // Restore
-            }
-            // If scrolled into the first set (Clone End), jump forward to Middle
-            else if (current.scrollLeft <= singleSetWidth * 0.5) {
-                const gap = 16;
-                if (current.scrollLeft <= gap) {
-                    current.style.scrollBehavior = 'auto';
-                    current.scrollLeft += singleSetWidth;
-                    current.style.scrollBehavior = 'smooth';
-                }
-            }
-        }
+        const handleMove = (clientX: number) => {
+            let newProgress = ((clientX - trackRect.left) / trackRect.width) * 100;
+            newProgress = Math.max(0, Math.min(100, newProgress));
+            setScrollProgress(newProgress);
+            const { scrollWidth, clientWidth } = scrollContainerRef.current!;
+            const maxScroll = scrollWidth - clientWidth;
+            scrollContainerRef.current!.scrollLeft = (newProgress / 100) * maxScroll;
+        };
+
+        const onPointerMove = (moveEvent: PointerEvent) => handleMove(moveEvent.clientX);
+        const onPointerUp = () => {
+            window.removeEventListener('pointermove', onPointerMove);
+            window.removeEventListener('pointerup', onPointerUp);
+        };
+
+        window.addEventListener('pointermove', onPointerMove);
+        window.addEventListener('pointerup', onPointerUp);
+        // Initial jump
+        handleMove(e.clientX);
     };
 
     return (
@@ -89,26 +59,24 @@ const Gallery: React.FC<GalleryProps> = ({ title, images, description, className
                         </div>
                     )}
 
-                    {/* Removed Top Vertical Line */}
-                    <h3 className="text-3xl md:text-4xl font-serif tracking-widest uppercase">{title}</h3>
-                    <div className="w-8 h-px bg-arch-black mt-6"></div>
+                    <h3 className="text-3xl md:text-4xl font-serif tracking-widest uppercase mb-2">{title}</h3>
                 </div>
             </div>
 
-            <div className="relative w-full group">
-                {/* Navigation Buttons */}
-                <button
-                    onClick={() => handleScroll('left')}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 text-gray-400 hover:text-arch-black transition-colors opacity-0 group-hover:opacity-100 duration-300"
-                >
-                    <ChevronLeft size={48} strokeWidth={0.5} />
-                </button>
-                <button
-                    onClick={() => handleScroll('right')}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 text-gray-400 hover:text-arch-black transition-colors opacity-0 group-hover:opacity-100 duration-300"
-                >
-                    <ChevronRight size={48} strokeWidth={0.5} />
-                </button>
+            <div className="relative w-full">
+                {/* Custom PC Scrollbar */}
+                <div className="hidden md:flex justify-center w-full mb-8 px-12 relative z-20">
+                    <div
+                        ref={trackRef}
+                        onPointerDown={handlePointerDown}
+                        className="w-full max-w-3xl h-[2px] bg-gray-300 relative cursor-pointer"
+                    >
+                        <div
+                            className="absolute top-1/2 h-[6px] w-24 bg-arch-black cursor-grab active:cursor-grabbing hover:h-[8px] transition-all"
+                            style={{ left: `${scrollProgress}%`, transform: `translate(-${scrollProgress}%, -50%)` }}
+                        />
+                    </div>
+                </div>
 
                 {/* Scroll Container */}
                 <div
@@ -117,7 +85,7 @@ const Gallery: React.FC<GalleryProps> = ({ title, images, description, className
                     className="flex overflow-x-auto gap-4 px-12 md:px-20 scrollbar-hide snap-x snap-mandatory"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
-                    {displayImages.map((img, index) => (
+                    {images.map((img, index) => (
                         <div key={index} className="flex-none w-[80vw] md:w-[25vw] aspect-[3/4] snap-center cursor-pointer" onClick={() => setSelectedImage(img)}>
                             <img
                                 src={img}

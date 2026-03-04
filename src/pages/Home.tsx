@@ -20,12 +20,21 @@ import img018 from '../assets/firefly018.png';
 import img019 from '../assets/firefly019.png';
 import img020 from '../assets/firefly020.png';
 import img021 from '../assets/firefly021.png';
+import img022 from '../assets/firefly022.png';
+import img023 from '../assets/firefly023.png';
+import img024 from '../assets/firefly024.png';
+import img025 from '../assets/firefly025.jpg';
+import img026 from '../assets/firefly026.jpg';
+import img027 from '../assets/firefly027.png';
+import img028 from '../assets/firefly028.png';
+import img029 from '../assets/firefly029.png';
 
 import heartImg from '../assets/menu/heart.png'; // Added heartImg import
 
 const modelImages = [
     img005, img006, img007, img008, img009,
-    img015, img016, img017, img018, img019, img020, img021
+    img015, img016, img017, img018, img019, img020, img021,
+    img022, img023, img024, img025, img026, img027, img028, img029
 ];
 
 const Home: React.FC = () => {
